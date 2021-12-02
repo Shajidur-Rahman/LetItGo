@@ -18,6 +18,9 @@ public class PhoneNumberActivity extends AppCompatActivity {
         binding = ActivityPhoneNumberBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        getSupportActionBar().hide();
+        binding.PhoneNumber.requestFocus();
+
         binding.phoneNumberContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

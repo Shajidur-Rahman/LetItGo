@@ -3,8 +3,12 @@ package com.example.letitgo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.hardware.input.InputManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.inputmethod.InputMethod;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.example.letitgo.databinding.ActivityOtpactivityBinding;
@@ -26,6 +30,7 @@ public class OTPActivity extends AppCompatActivity {
     String phoneNumber;
     FirebaseAuth auth;
     String verification;
+    String TAG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +38,11 @@ public class OTPActivity extends AppCompatActivity {
         binding = ActivityOtpactivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        auth = FirebaseAuth.getInstance();
+        getSupportActionBar().hide();
+        binding.otpView.requestFocus();
 
+        auth = FirebaseAuth.getInstance();
+        TAG = "Shajidur";
         phoneNumber = getIntent().getStringExtra("phoneNumber");
 
         binding.phoneVarify.setText("Verify " + phoneNumber);
@@ -58,6 +66,9 @@ public class OTPActivity extends AppCompatActivity {
                     @Override
                     public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                         super.onCodeSent(s, forceResendingToken);
+                        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(OTPActivity.INPUT_METHOD_SERVICE);
+                        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+                        binding.otpView.requestFocus();
                         verification = s;
                     }
                 }).build();
@@ -78,6 +89,7 @@ public class OTPActivity extends AppCompatActivity {
                          }
                          else {
                              Toast.makeText(OTPActivity.this, "No", Toast.LENGTH_SHORT).show();
+                             Log.d(TAG, "onComplete: No");
                          }
                      }
                  });
