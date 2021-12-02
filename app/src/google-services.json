@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "894270108389",
+    "project_id": "myletitgoapp",
+    "storage_bucket": "myletitgoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894270108389:android:44f0fa40f5a5a0697e5a0c",
+        "android_client_info": {
+          "package_name": "com.example.letitgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894270108389-99v0t5kbsupd32eok6dfnc2equjlg9fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2R-FzGPQ05yaFVWkK5EmGCOIrhoMakKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894270108389-99v0t5kbsupd32eok6dfnc2equjlg9fv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
