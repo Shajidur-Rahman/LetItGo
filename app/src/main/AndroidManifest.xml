@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.letitgo">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LetItGo">
+        android:theme="@style/Theme.LetItGo"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".OTPActivity"
-            android:windowSoftInputMode="stateVisible"
+            android:name=".SetUpActivity"
             android:exported="false" />
         <activity
+            android:name=".OTPActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
             android:name=".PhoneNumberActivity"
-            android:windowSoftInputMode="stateVisible"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +31,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

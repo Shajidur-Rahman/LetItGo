@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E6D9D9"
-    tools:context=".PhoneNumberActivity">
+    tools:context=".SetUpActivity">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avater"
-        android:layout_width="138dp"
-        android:layout_height="96dp"
+        android:layout_width="148dp"
+        android:layout_height="126dp"
         android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/number" />
+        android:src="@drawable/avater" />
 
     <TextView
         android:id="@+id/phoneVarify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Verify your phone number"
+        android:text="Profile Info"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/avater"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="It will send you a sms to varify your number"
+        android:text="Please set your name and optional profile picture"
         app:layout_constraintEnd_toEndOf="@+id/phoneVarify"
         app:layout_constraintStart_toStartOf="@+id/phoneVarify"
         app:layout_constraintTop_toBottomOf="@+id/phoneVarify" />
@@ -60,23 +60,23 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/PhoneNumber"
+                android:id="@+id/profileName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/tool_box"
                 android:ems="10"
-                android:hint="Mobile Number: "
-                android:inputType="phone"
+                android:hint="Enter your name: "
+                android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp" />
 
             <Button
-                android:id="@+id/phoneNumberContinue"
+                android:id="@+id/setUpprofile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#61E367"
-                android:text="Continue"
+                android:text="Set up profile"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="410dp" />
 

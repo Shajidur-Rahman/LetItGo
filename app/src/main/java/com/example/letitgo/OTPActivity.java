@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.hardware.input.InputManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +33,7 @@ public class OTPActivity extends AppCompatActivity {
     FirebaseAuth auth;
     String verification;
     String TAG;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,11 @@ public class OTPActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
         binding.otpView.requestFocus();
+
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Sending OTP code");
+        dialog.setCancelable(false);
+        dialog.show();
 
         auth = FirebaseAuth.getInstance();
         TAG = "Shajidur";
@@ -69,6 +77,7 @@ public class OTPActivity extends AppCompatActivity {
                         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(OTPActivity.INPUT_METHOD_SERVICE);
                         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
                         binding.otpView.requestFocus();
+                        dialog.dismiss();
                         verification = s;
                     }
                 }).build();
@@ -85,7 +94,9 @@ public class OTPActivity extends AppCompatActivity {
                      @Override
                      public void onComplete(@NonNull Task<AuthResult> task) {
                          if(task.isSuccessful()){
-                             Toast.makeText(OTPActivity.this, "Yes", Toast.LENGTH_SHORT).show();
+                             Intent intent = new Intent(OTPActivity.this, SetUpActivity.class);
+                             startActivity(intent);
+                             finishAffinity();
                          }
                          else {
                              Toast.makeText(OTPActivity.this, "No", Toast.LENGTH_SHORT).show();
