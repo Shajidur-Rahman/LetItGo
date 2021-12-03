@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="5dp">
+    android:paddingBottom="15dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/insideImg"
-        android:layout_width="55dp"
-        android:layout_height="48dp"
+        android:layout_width="80dp"
+        android:layout_height="66dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
+        android:src="@drawable/avater"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/insideName"
@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="Loading..."
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/insideImg"
         app:layout_constraintTop_toTopOf="@+id/insideImg" />
@@ -31,22 +32,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginBottom="6dp"
         android:text="Loading..."
-        android:textSize="13sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/insideImg"
         app:layout_constraintStart_toEndOf="@+id/insideImg" />
 
     <TextView
         android:id="@+id/msgTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
+        android:layout_width="49dp"
+        android:layout_height="21dp"
         android:text="Loading..."
-        android:textSize="10sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/lastMsg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
-        app:layout_constraintStart_toEndOf="@+id/insideName"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toEndOf="@+id/insideImg"
         app:layout_constraintTop_toTopOf="@+id/insideName"
-        app:layout_constraintVertical_bias="0.633" />
+        app:layout_constraintVertical_bias="0.653" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#CCCCCC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insideImg" />
 </androidx.constraintlayout.widget.ConstraintLayout>
