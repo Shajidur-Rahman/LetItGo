@@ -7,27 +7,43 @@
     android:background="@drawable/download"
     tools:context=".ChatActivity">
 
+    <ImageView
+        android:id="@+id/send"
+        android:layout_width="41dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_green"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.076"
+        app:srcCompat="@android:drawable/ic_menu_send" />
+
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/cardView"
+        android:layout_width="349dp"
+        android:layout_height="53dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:foregroundGravity="center"
         app:cardCornerRadius="20dp"
         app:contentPaddingLeft="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="333dp"
+            android:layout_height="52dp"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/msgBox"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -48,11 +64,21 @@
 
             <ImageView
                 android:id="@+id/cameraBtn"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="32dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
                 android:foregroundTint="#D6D6D6"
-                app:srcCompat="@android:drawable/ic_menu_camera" />
+                app:srcCompat="@drawable/camera" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
